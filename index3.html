@@ -5,7 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+      <style>
+        /* RESET DE ESTILOS PADRÃO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e1b4b); /* Fundo escuro estético para contraste */
+            height: 200vh; /* Altura extra apenas para testar a rolagem da página */
+        }
+
+        /* 👑 ESTILIZAÇÃO DO CABEÇALHO */
+        .custom-header {
+            position: fixed; /* Mantém o cabeçalho fixo no topo ao rolar a página */
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Separa Logo, Menu e Botão */
+            align-items: center;
+            padding: 1.25rem 10%; /* Espaçamento interno premium */
+            z-index: 1000;
+            
+            /* Efeito Glassmorphism (Transparência + Desfoque) */
+            background: rgba(15, 23, 42, 0.6); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            
+            transition: all 0.3s ease;
+        }
+
+        /* 🏷️ LOGO */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #6366f1; /* Detalhe colorido no logo (Indigo) */
+        }
+
+        /* 🗺️ LINKS DE NAVEGAÇÃO */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem; /* Espaço generoso entre os links */
+        }
+
+        .nav-link {
+            color: #94a3b8; /* Cor cinza elegante para links inativos */
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        /* Efeito de hover suave */
+        .nav-link:hover {
+            color: #fff;
+        }
+
+        /* Linha estética animada embaixo do link ao passar o mouse */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #6366f1;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* 🚀 BOTÃO CALL TO ACTION (CTA) */
+        .cta-button {
+            background: #6366f1;
+            color: #fff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px; /* Bordas totalmente arredondadas */
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #4f46e5;
+            transform: translateY(-2px); /* Efeito flutuante leve */
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+    </style>
+</head>
 <body>
-    <h1>vc e hetero sexual</h1>
+
+    <!-- Estrutura Semântica do Cabeçalho -->
+    <header class="custom-header">
+        <a href="#" class="logo">Aesthetic<span>Studio</span></a>
+        
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="inde2.html" class="nav-link">Início</a></li>
+                <li><a href="index3.html" class="nav-link">Projetos</a></li>
+                <li><a href="index4.html" class="nav-link">Serviços</a></li>
+                <li><a href="index5.html" class="nav-link">Sobre</a></li>
+            </ul>
+        </nav>
+        
+        <a href="#" class="cta-button">login</a>
+    </header>
+<body>
+    <h1></h1>
 </body>
 </html>
