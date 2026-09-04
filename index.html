@@ -5,9 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>smalvile/fan base</title>
     <header>
-  <h1>Meu Site</h1>
-
+        <img src="" alt="">
       <style>
+        header {
+  display: flex;
+  justify-content: space-between; /* Separa os itens para as pontas */
+  align-items: center;            /* Alinha os itens verticalmente no centro */
+  padding: 10px 20px;
+}
+
+.canto-logo {
+  width: 5px; /* Ajuste o tamanho da imagem conforme necessário */
+  height: auto;
+}
+
+
+
         /* RESET DE ESTILOS PADRÃO */
         * {
             margin: 0;
@@ -34,10 +47,10 @@
             z-index: 1000;
             
             /* Efeito Glassmorphism (Transparência + Desfoque) */
-            background: rgba(15, 23, 42, 0.6); 
+            background: rgba(158, 35, 35, 0.6); 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 2cap transparent hwb(0 0% 100% / 0.877);
             
             transition: all 0.3s ease;
         }
@@ -52,7 +65,7 @@
         }
 
         .logo span {
-            color: #6366f1; /* Detalhe colorido no logo (Indigo) */
+            color: #ff789a; /* Detalhe colorido no logo (Indigo) */
         }
 
         /* 🗺️ LINKS DE NAVEGAÇÃO */
@@ -84,7 +97,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: #6366f1;
+            background-color: #9293ff;
             transition: width 0.3s ease;
         }
 
@@ -106,17 +119,48 @@
         }
 
         .cta-button:hover {
-            background: #4f46e5;
+            background:transparent;
             transform: translateY(-2px); /* Efeito flutuante leve */
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 6px 20px rgba(219, 162, 115, 0.4);
         }
+        h1{
+            color: #fff;
+
+        }
+        .slider-container {
+    width: 50%;           /* Ocupa menos que a metade */
+    overflow: hidden; 
+    border-radius: 50px;
+    margin: 50px 0;      /* Alinhado à esquerda por padrão */
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Define a suavidade do movimento */
+  }
+
+  .slide {
+    min-width: 100%;      /* Garante que cada slide preencha o container de 40% */
+    aspect-ratio: 16 / 9;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+
+
+
+        
     </style>
-</head>
 <body>
 
     <!-- Estrutura Semântica do Cabeçalho -->
     <header class="custom-header">
-        <a href="#" class="logo">Aesthetic<span>Studio</span></a>
+        <a href="#" class="logo">smallville<span>fan/base</span></a>
         
         <nav>
             <ul class="nav-menu">
@@ -129,9 +173,24 @@
         
         <a href="#" class="cta-button">Contato</a>
     </header>
-</header>
-
+    <script>
+        const slider = document.getElementById('slider');
+        let index = 0;
+      
+        function moverSlider() {
+          index++;
+          if (index >= 7) index = 0; // Volta para o primeiro após o último
+          
+          // Move o slider para a esquerda baseado no índice
+          slider.style.transform = `translateX(${-index * 100}%)`;
+        }
+      
+        // Muda de slide a cada 3 segundos
+        setInterval(moverSlider, 3000);
+      </script>
 <body>
+  
     
 </body>
+
 </html>
