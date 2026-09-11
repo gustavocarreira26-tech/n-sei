@@ -1,0 +1,21 @@
+/* 🏷️ AJUSTE DO LOGO COM IMAGEM */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre a imagem e o texto do logo */
+    font-size: 1.5rem;
+    font-weight: 50px;
+    color: #ddd2d2;
+    text-decoration: none;
+    letter-spacing: -1.5px;
+}
+
+.logo-img {
+    height: 20px;      /* Define uma altura fixa ideal para cabeçalhos */
+    width: auto;       /* Mantém a proporção correta da imagem */
+    object-fit: contain;
+}
+
+.logo span {
+    color: #ff789a; 
+}
