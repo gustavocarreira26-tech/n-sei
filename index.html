@@ -4,31 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>smalvile/fan base</title>
-    <header>
     
-      <style>
-        header {
-  display: flex;
-  justify-content: space-between; /* Separa os itens para as pontas */
-  align-items: center;            /* Alinha os itens verticalmente no centro */
-  padding: 10px 20px;
-}
-
-div{
-    width: 80px;
-    height: 80px;
-    background-image:url(super-homen.png);
-    background-size: cover;
-
-}
-
-.canto-logo {
-  width: 5px; /* Ajuste o tamanho da imagem conforme necessário */
-  height: auto;
-}
-
-
-
+    <style>
         /* RESET DE ESTILOS PADRÃO */
         * {
             margin: 0;
@@ -38,66 +15,74 @@ div{
         }
 
         body {
-            background: linear-gradient(135deg, #0f172a, #1e1b4b); /* Fundo escuro estético para contraste */
-            height: 200vh; /* Altura extra apenas para testar a rolagem da página */
+            background: linear-gradient(135deg, #0f172a, #1e1b4b); /* Fundo escuro estético */
+            height: 200vh;
         }
 
         /* 👑 ESTILIZAÇÃO DO CABEÇALHO */
         .custom-header {
-            position: fixed; /* Mantém o cabeçalho fixo no topo ao rolar a página */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             display: flex;
-            justify-content: space-between; /* Separa Logo, Menu e Botão */
+            justify-content: space-between;
             align-items: center;
-            padding: 1.25rem 10%; /* Espaçamento interno premium */
+            padding: 1.25rem 5%; /* Ajustado o espaçamento lateral para caber tudo */
             z-index: 1000;
-            
-            /* Efeito Glassmorphism (Transparência + Desfoque) */
             background: rgba(158, 35, 35, 0.6); 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 2cap transparent hwb(0 0% 100% / 0.877);
-            
             transition: all 0.3s ease;
         }
 
-        /* 🏷️ LOGO */
+        /* LOGO COM IMAGEM E TEXTO */
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            background-image: url('superman.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+        }
+
         .logo {
-            font-size: 1.9rem;
-            font-weight: 60;
+            font-size: 1.6rem;
+            font-weight: 600;
             color: #fff;
             text-decoration: none;
-            letter-spacing: -2.5px;
+            letter-spacing: -1px;
         }
 
         .logo span {
-            color: #ff789a; /* Detalhe colorido no logo (Indigo) */
+            color: #ff789a;
         }
 
-        /* 🗺️ LINKS DE NAVEGAÇÃO */
+        /* 🗺️️ LINKS DE NAVEGAÇÃO */
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2.5rem; /* Espaço generoso entre os links */
+            gap: 2rem;
         }
 
         .nav-link {
-            color: #94a3b8; /* Cor cinza elegante para links inativos */
+            color: #94a3b8;
             text-decoration: none;
             font-size: 0.95rem;
-            font-weight: 50;
             transition: color 0.3s ease;
             position: relative;
         }
 
-        /* Efeito de hover suave */
         .nav-link:hover {
             color: #fff;
         }
 
-        /* Linha estética animada embaixo do link ao passar o mouse */
         .nav-link::after {
             content: '';
             position: absolute;
@@ -113,69 +98,98 @@ div{
             width: 100%;
         }
 
-        /* 🚀 BOTÃO CALL TO ACTION (CTA) */
-        .cta-button {
-            background: #6366f1;
-            color: #fff;
-            padding: 0.6rem 1.4rem;
-            border-radius: 50px; /* Bordas totalmente arredondadas */
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+        /* 🔍 BARRA DE PESQUISA ADICIONADA */
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 4px 6px 4px 14px;
+            backdrop-filter: blur(5px);
             transition: all 0.3s ease;
         }
 
-        .cta-button:hover {
-            background:transparent;
-            transform: translateY(-2px); /* Efeito flutuante leve */
-            box-shadow: 0 6px 20px rgba(219, 162, 115, 0.4);
+        .search-box:focus-within {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ff789a;
+            box-shadow: 0 0 10px rgba(255, 120, 154, 0.3);
         }
-        h1{
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
             color: #fff;
-
+            font-size: 0.88rem;
+            width: 140px;
+            transition: width 0.3s ease;
         }
+
+        .search-box input::placeholder {
+            color: #cbd5e1;
+        }
+
+        /* Expande levemente a caixa ao clicar */
+        .search-box input:focus {
+            width: 180px;
+        }
+
+        .search-box button {
+            background: #6366f1;
+            border: none;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .search-box button:hover {
+            background: #4f46e5;
+        }
+
+        /* SLIDER */
         .slider-container {
-    width: 50%;           /* Ocupa menos que a metade */
-    overflow: hidden; 
-    border-radius: 50px;
-    margin: 50px 0;      /* Alinhado à esquerda por padrão */
-  }
+            width: 50%;
+            overflow: hidden; 
+            border-radius: 50px;
+            margin: 120px auto 50px auto; /* Ajustado para não ficar atrás do cabeçalho fixo */
+        }
 
-  .slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out; /* Define a suavidade do movimento */
-  }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
 
-  .slide {
-    min-width: 100%;      /* Garante que cada slide preencha o container de 40% */
-    aspect-ratio: 16 / 9;
-  }
+        .slide {
+            min-width: 100%;
+            aspect-ratio: 16 / 9;
+        }
 
-  .slide img {
-    width: 10%;
-    height: 10%;
-    object-fit: cover;
-  }
-</style>
-
-
-
-
-        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
+</head>
 <body>
 
-    <!-- Estrutura Semântica do Cabeçalho -->
+    <!-- Estrutura do Cabeçalho -->
     <header class="custom-header">
-        <div>
-            
+        
+        <!-- Logo + Imagem do Superman -->
+        <div class="header-brand">
+            <div class="logo-img"></div>
+            <a href="#" class="logo">
+                <span>smallville</span>fan/base
+            </a>
         </div>
-        <!-- Substitua a linha antiga do logo por esta estrutura -->
-<a href="#" class="logo">
-    <span>smallville</span>fan/base
-</a>
 
+        <!-- Links de Navegação -->
         <nav>
             <ul class="nav-menu">
                 <li><a href="inde2.html" class="nav-link">Início</a></li>
@@ -184,26 +198,30 @@ div{
                 <li><a href="index5.html" class="nav-link">Sobre</a></li>
             </ul>
         </nav>
-        
+
+        <!-- Formulário da Barra de Pesquisa -->
+        <form action="#" method="GET" class="search-box">
+            <input type="text" name="q" placeholder="Buscar..." required />
+            <button type="submit">Buscar</button>
+        </form>
+
     </header>
+
     <script>
         const slider = document.getElementById('slider');
         let index = 1;
-      
-        function moverSlider() {
-          index++;
-          if (index >= 7) index = 1; // Volta para o primeiro após o último
-          
-          // Move o slider para a esquerda baseado no índice
-          slider.style.transform = `translateX(${-index * 100}%)`;
-        }
-      
-        // Muda de slide a cada 3 segundos
-        setInterval(moverSlider, 3000);
-      </script>
-<body>
-<link rel="stylesheet" href="style.css">
-    
-</body>
 
+        function moverSlider() {
+            if (!slider) return;
+            index++;
+            if (index >= 7) index = 1;
+            slider.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        setInterval(moverSlider, 3000);
+    </script>
+    <h1>meu pau
+        
+    </h1>
+</body>
 </html>
